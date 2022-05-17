@@ -1,0 +1,31 @@
+# eval $(minikube docker-env)           ||
+# minikube image load dotnetcoreapp
+# kubectl create -f deployment.yaml     || 
+# kubectl apply -f deployment.yaml
+# kubectl get deployments
+# kubectl get pods
+# minikube dashboard
+# kubectl delete deployment dotnetcoreapp
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnetcoreapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotnetcoreapp
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: dotnetcoreapp
+    spec:
+      containers:
+      - image: dotnetcoreapp
+        name: dotnetcoreapp
+        imagePullPolicy: IfNotPresent
+        resources: {}
+        ports:
+          - containerPort: 8080 

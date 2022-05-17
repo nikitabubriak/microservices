@@ -1,0 +1,19 @@
+# kubectl create -f service.yaml        ||
+# kubectl apply -f service.yaml
+# kubectl get svc
+# kubectl cluster-info
+# kubectl delete service dotnetcoreapp
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: dotnetcoreapp
+  labels:
+    run: dotnetcoreapp
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+  selector:
+    app: dotnetcoreapp
+  type: NodePort
