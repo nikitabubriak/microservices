@@ -1,3 +1,4 @@
+# E:\KPI\Micro\microservices\micros\k8s
 # eval $(minikube docker-env)           ||
 # minikube image load dotnetcoreapp
 # kubectl create -f deployment.yaml     || 
